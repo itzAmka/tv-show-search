@@ -1,7 +1,11 @@
+import Navbar from './components/layout/Navbar';
+import Home from './pages/Home';
+
 const App = () => {
 	return (
 		<div>
-			<h1 className='text-3xl font-bold underline'>App</h1>
+			<Navbar />
+			<Home />
 		</div>
 	);
 };
