@@ -1,11 +1,12 @@
+import { Link } from 'react-router-dom';
 import NoImage from '../../assets/no-image.svg';
 
 const Show = ({ show }) => {
 	const { id, name, genres, image, rating } = show;
 
 	return (
-		<a
-			href='#'
+		<Link
+			to={`/show/${id}/${name.replaceAll(' ', '_')}`}
 			className='card bg-slate-800 shadow-xl max-w-xs sm:mx-0 mx-auto '>
 			<figure className='h-full '>
 				<img
@@ -35,7 +36,7 @@ const Show = ({ show }) => {
 					)}
 				</div>
 			</div>
-		</a>
+		</Link>
 	);
 };
 
