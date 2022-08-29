@@ -7,20 +7,22 @@ const Shows = () => {
 	const { shows, loading } = useContext(ShowsContext);
 
 	return (
-		<section className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 sm:mt-16 mt-10 max-w-7xl mx-auto'>
-			{loading ? (
-				<>
-					<Spinner />
-				</>
-			) : (
-				<>
-					{shows.map(showObj => {
-						const { show } = showObj;
-						return <Show key={show.id} show={show} />;
-					})}
-				</>
-			)}
-		</section>
+		<div className='grid place-items-center max-w-7xl  mx-auto'>
+			<section className='grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 sm:mt-16 mt-10 '>
+				{loading ? (
+					<>
+						<Spinner />
+					</>
+				) : (
+					<>
+						{shows.map(showObj => {
+							const { show } = showObj;
+							return <Show key={show.id} show={show} />;
+						})}
+					</>
+				)}
+			</section>
+		</div>
 	);
 };
 

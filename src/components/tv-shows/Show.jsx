@@ -7,11 +7,11 @@ const Show = ({ show }) => {
 	return (
 		<Link
 			to={`/show/${id}/${name.replaceAll(' ', '_')}`}
-			className='card bg-slate-800 shadow-xl max-w-xs sm:mx-0 mx-auto '>
-			<figure className='h-full '>
+			className='card bg-slate-800 shadow-xl max-w-xs sm:mx-0'>
+			<figure className='h-full'>
 				<img
 					src={image ? image.medium : NoImage}
-					alt='Shoes'
+					alt={`${name} tv show poster`}
 					className='w-full max-h-80 border-b'
 				/>
 			</figure>
