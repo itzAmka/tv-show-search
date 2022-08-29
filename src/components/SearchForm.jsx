@@ -1,4 +1,12 @@
+import { useState } from 'react';
+
 const SearchForm = () => {
+	const [searchTerm, setSearchTerm] = useState('');
+
+	const handleChange = e => {
+		setSearchTerm(e.target.value);
+	};
+
 	const handleSubmit = e => {
 		e.preventDefault();
 		console.log('Submitted');
@@ -11,6 +19,8 @@ const SearchForm = () => {
 					type='search'
 					className='input input-bordered input-primary w-full'
 					placeholder='Search for people'
+					value={searchTerm}
+					onChange={handleChange}
 				/>
 				<button className='btn btn-primary rounded-l-none absolute right-0'>
 					Search
