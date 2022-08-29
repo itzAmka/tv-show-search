@@ -1,6 +1,7 @@
 import { useEffect, useContext } from 'react';
 import SearchForm from '../components/SearchForm';
 import Container from '../components/shared/Container';
+import Spinner from '../components/Spinner';
 import Shows from '../components/tv-shows/Shows';
 import { ShowsContext } from '../context/ShowsContext';
 
@@ -15,14 +16,10 @@ const Home = () => {
 		searchTvShows(randomTvShowName);
 	}, []);
 
-	if (loading) {
-		return <h3>Loading...</h3>;
-	}
-
 	return (
 		<Container>
 			<SearchForm />
-			<Shows />
+			{loading ? <Spinner /> : <Shows />}
 		</Container>
 	);
 };
