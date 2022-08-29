@@ -1,15 +1,18 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { ShowsContext } from '../context/ShowsContext';
 
 const SearchForm = () => {
-	const [searchTerm, setSearchTerm] = useState('');
+	const { searchTvShows } = useContext(ShowsContext);
+	const [showName, setShowName] = useState('');
 
 	const handleChange = e => {
-		setSearchTerm(e.target.value);
+		setShowName(e.target.value);
 	};
 
 	const handleSubmit = e => {
 		e.preventDefault();
 		console.log('Submitted');
+		searchTvShows(showName);
 	};
 
 	return (
@@ -19,7 +22,7 @@ const SearchForm = () => {
 					type='search'
 					className='input input-bordered input-primary w-full'
 					placeholder='Search for people'
-					value={searchTerm}
+					value={showName}
 					onChange={handleChange}
 				/>
 				<button className='btn btn-primary rounded-l-none absolute right-0'>

@@ -1,12 +1,13 @@
+import { ShowsProvider } from './context/ShowsContext';
 import Navbar from './components/layout/Navbar';
 import Home from './pages/Home';
 
 const App = () => {
 	return (
-		<div>
+		<ShowsProvider>
 			<Navbar />
 			<Home />
-		</div>
+		</ShowsProvider>
 	);
 };
 
