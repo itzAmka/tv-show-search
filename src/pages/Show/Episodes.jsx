@@ -29,23 +29,25 @@ const Episodes = () => {
 					</thead>
 					<tbody>
 						{episodes.map(episode => {
+							const { id, season, number, rating, airdate, name, url } =
+								episode;
 							return (
-								<tr className='even:text-blue-500' key={episode.id}>
+								<tr className='even:text-blue-500' key={id}>
 									<td className='border border-slate-700'>
-										S{episode.season} EP{episode.number}
+										S{season} EP{number}
 									</td>
 									<td className='border border-slate-700'>
 										<a
-											href={episode.url}
+											href={url}
 											target='_blank'
 											rel='noreferrer'
-											className='btn btn-link'>
-											{episode.name}
+											className='btn-link uppercase font-bold text-sm italic'>
+											{name}
 										</a>
 									</td>
-									<td className='border border-slate-700'>{episode.airdate}</td>
+									<td className='border border-slate-700'>{airdate}</td>
 									<td className='border border-slate-700'>
-										{episode.rating?.average ? episode.rating?.average : 'N/A'}
+										{rating?.average ? rating?.average : 'N/A'}
 									</td>
 								</tr>
 							);
