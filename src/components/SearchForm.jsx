@@ -21,7 +21,7 @@ const SearchForm = () => {
 				<input
 					type='search'
 					className='input input-bordered input-primary w-full'
-					placeholder='Search for people'
+					placeholder='Search for shows'
 					value={showName}
 					onChange={handleChange}
 				/>

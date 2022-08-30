@@ -1,12 +1,20 @@
 import { useState, createContext } from 'react';
 import { searchShows } from '../api/searchShows';
 import { searchShow } from '../api/searchShow';
+import { getEpisodes } from '../api/getEpisodes';
+import { getSeasons } from '../api/getSeasons';
+import { getCasts } from '../api/getCasts';
+import { getCrews } from '../api/getCrews';
 
 export const ShowsContext = createContext();
 
 export const ShowsProvider = ({ children }) => {
 	const [show, setShow] = useState({});
 	const [shows, setShows] = useState([]);
+	const [episodes, setEpisodes] = useState([]);
+	const [seasons, setSeasons] = useState([]);
+	const [casts, setCasts] = useState([]);
+	const [crews, setCrews] = useState([]);
 	const [loading, setLoading] = useState(false);
 
 	const searchTvShows = async showNames => {
@@ -30,7 +38,62 @@ export const ShowsProvider = ({ children }) => {
 			setTimeout(() => {
 				setShow(res);
 				setLoading(false);
-				// return res;
+			}, 500);
+		} catch (error) {
+			console.log('Errr:', error);
+		}
+	};
+
+	const getEpisodesById = async id => {
+		try {
+			setLoading(true);
+			const res = await getEpisodes(id);
+			console.log(res);
+			setTimeout(() => {
+				setEpisodes(res);
+				setLoading(false);
+			}, 500);
+		} catch (error) {
+			console.log('Errr:', error);
+		}
+	};
+
+	const getSeasonsById = async id => {
+		try {
+			setLoading(true);
+			const res = await getSeasons(id);
+			console.log(res);
+			setTimeout(() => {
+				setSeasons(res);
+				setLoading(false);
+			}, 500);
+		} catch (error) {
+			console.log('Errr:', error);
+		}
+	};
+
+	const getCastsById = async id => {
+		try {
+			setLoading(true);
+			const res = await getCasts(id);
+			console.log(res);
+			setTimeout(() => {
+				setCasts(res);
+				setLoading(false);
+			}, 500);
+		} catch (error) {
+			console.log('Errr:', error);
+		}
+	};
+
+	const getCrewsById = async id => {
+		try {
+			setLoading(true);
+			const res = await getCrews(id);
+			console.log(res);
+			setTimeout(() => {
+				setCrews(res);
+				setLoading(false);
 			}, 500);
 		} catch (error) {
 			console.log('Errr:', error);
@@ -42,8 +105,16 @@ export const ShowsProvider = ({ children }) => {
 			value={{
 				searchTvShows,
 				searchSingleShow,
+				getEpisodesById,
+				getSeasonsById,
+				getCastsById,
+				getCrewsById,
 				shows,
 				show,
+				episodes,
+				seasons,
+				casts,
+				crews,
 				loading,
 			}}>
 			{children}
