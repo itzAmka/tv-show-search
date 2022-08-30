@@ -4,10 +4,10 @@ import Navbar from './components/layout/Navbar';
 import ShowsIndex from './pages/show/ShowsIndex';
 import ShowsNav from './pages/show/ShowsNav';
 import ShowDetails from './pages/show/ShowDetails';
-import Episodes from './pages/Show/Episodes';
-import Seasons from './pages/Show/Seasons';
-import Cast from './pages/Show/Cast';
-import Crew from './pages/Show/Crew';
+import Episodes from './pages/show/Episodes';
+import Seasons from './pages/show/Seasons';
+import Cast from './pages/show/Cast';
+import Crew from './pages/show/Crew';
 import Shows from './components/tv-shows/Shows';
 
 const App = () => {
