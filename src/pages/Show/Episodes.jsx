@@ -12,13 +12,13 @@ const Episodes = () => {
 	}, []);
 
 	return (
-		<div className='max-w-7xl mx-auto'>
+		<div className='max-w-7xl mx-auto overflow-x-auto'>
 			{loading ? (
 				<>
 					<Spinner />
 				</>
 			) : (
-				<table className='table w-full border-collapse border border-slate-500 '>
+				<table className='table w-full border-collapse border border-slate-500'>
 					<thead>
 						<tr className='bg-red-200'>
 							<th className='border border-slate-600'>Episodes</th>

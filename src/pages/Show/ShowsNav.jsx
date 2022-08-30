@@ -1,14 +1,12 @@
-import { Outlet, Link, useParams } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 import Container from '../../components/shared/Container';
 
 const ShowsNav = () => {
-	const params = useParams();
-	console.log(params);
 	return (
 		<Container>
-			<section className='max-w-7xl mx-auto mt-50 '>
+			<section className='max-w-7xl mx-auto  mt-10'>
 				<nav className='navbar bg-slate-800 mb-5 rounded'>
-					<ul className='flex justify-around gap-5 w-full'>
+					<ul className='flex justify-around gap-5 w-full sm:flex-row flex-col'>
 						<li>
 							<Link to='' className='btn btn-link'>
 								Main

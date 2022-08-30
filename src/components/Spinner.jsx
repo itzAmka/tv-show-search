@@ -1,8 +1,6 @@
 import spinner from '../assets/spinner.gif';
 
-import React from 'react';
-
-const Spinner = () => {
+function Spinner() {
 	return (
 		<div className='w-100 mt-20'>
 			<img
@@ -13,6 +11,6 @@ const Spinner = () => {
 			/>
 		</div>
 	);
-};
+}
 
 export default Spinner;

@@ -18,12 +18,13 @@ const Seasons = () => {
 			) : (
 				<>
 					{seasons.map(season => {
-						const { id, number, image, premiereDate, url, summary } = season;
+						const { id, number, image, premiereDate, url } = season;
 						return (
 							<div key={id} className='mb-10 bg-slate-800 p-5 rounded'>
-								<div className='flex gap-4 mb-5'>
+								<div className='flex sm:flex-row flex-col gap-4 mb-5'>
 									<img src={image?.medium} alt='' />
-									<h2 className='mb-3'>
+
+									<h2>
 										<a
 											href={url}
 											target='_blank'
@@ -34,10 +35,6 @@ const Seasons = () => {
 										</a>
 									</h2>
 								</div>
-								<p>
-									{summary &&
-										summary.replaceAll('<p>', '').replaceAll('</p>', '')}
-								</p>
 							</div>
 						);
 					})}

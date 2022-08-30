@@ -1,4 +1,4 @@
-import { useState, createContext, useEffect } from 'react';
+import { useState, createContext } from 'react';
 import { searchShows } from '../api/searchShows';
 import { searchShow } from '../api/searchShow';
 import { getEpisodes } from '../api/getEpisodes';

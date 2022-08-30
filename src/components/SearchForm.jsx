@@ -19,8 +19,8 @@ const SearchForm = () => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit} className='md:max-w-3xl md:mx-auto mt-5'>
-			<div className='form-control relative'>
+		<form onSubmit={handleSubmit} className='md:max-w-3xl md:mx-auto mt-5 w-60'>
+			<div className='form-control relative w-full'>
 				<input
 					type='search'
 					className='input input-bordered input-primary w-full'

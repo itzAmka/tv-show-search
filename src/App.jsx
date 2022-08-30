@@ -17,7 +17,6 @@ const App = () => {
 				<Navbar />
 				<Routes>
 					<Route path='/' element={<ShowsIndex />} />
-					<Route path='/people' element={<h1 className='m-20'>People</h1>} />
 					<Route path='/shows' element={<Shows />}></Route>
 					<Route path='/shows/:id/:showName' element={<ShowsNav />}>
 						<Route path='' element={<ShowDetails />} />

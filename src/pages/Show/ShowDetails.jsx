@@ -32,7 +32,7 @@ const ShowDetails = () => {
 				<Spinner />
 			) : (
 				<>
-					<section className='flex gap-5 md:flex-row flex-col'>
+					<section className='flex gap-5 lg:flex-row flex-col'>
 						<div className='shadow-lg md:self-start self-center rounded-lg overflow-hidden min-w-max'>
 							<img
 								src={image ? image.medium : NoImage}
@@ -40,7 +40,7 @@ const ShowDetails = () => {
 								className='min-h-max '
 							/>
 						</div>
-						<div className='flex flex-col grow pl-2 pr-7 md:mt-0 mt-3  md:text-start md:self-start text-center self-center'>
+						<div className='bg-slate-700 p-5 rounded flex flex-col grow pl-2 pr-7 md:mt-0 mt-3  md:text-start md:self-start text-center self-center'>
 							<div className='flex flex-col'>
 								<h2 className='text-2xl font-bold italic'>
 									{name} - {premiered && premiered.slice(0, 4)} (
@@ -68,10 +68,17 @@ const ShowDetails = () => {
 										)}
 									</div>
 								</h2>
-								<p className='mt-5 text-xl'>{summary && summary}</p>
+								<p className='mt-5 text-xl'>
+									{summary &&
+										summary
+											?.replaceAll('<p>', '')
+											?.replaceAll('</p>', '')
+											?.replaceAll('<b>', '')
+											?.replaceAll('</b>', '')}
+								</p>
 							</div>
 						</div>
-						<section className='bg-slate-700 p-4 max-w-max rounded'>
+						<section className='bg-slate-700 p-4 lg:max-w-max rounded w-full'>
 							<h2 className='text-2xl font-bold italic mb-3'>Show Info</h2>
 							<div className='text-xl italic'>
 								<p>

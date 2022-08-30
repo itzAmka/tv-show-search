@@ -19,28 +19,32 @@ const Cast = () => {
 				</>
 			) : (
 				<>
-					{casts.map(cast => {
-						const { person, character } = cast;
-						return (
-							<div key={person.id} className='mb-10 bg-slate-800 p-5 rounded'>
-								<div className='flex gap-4 mb-5'>
-									<img src={character.image?.medium} alt='' />
-									<h2 className='mb-3'>
-										<a
-											href={person.url}
-											target='_blank'
-											rel='noreferrer'
-											className='text-2xl font-bold italic btn-link'>
-											{person.name}
-										</a>
-										<span className='text-2xl font-bold italic ml-2'>
-											as {character.name}
-										</span>
-									</h2>
+					{casts.length === 0 ? (
+						<div className='mb-10 bg-slate-800 p-5 rounded'>N/A</div>
+					) : (
+						casts.map(cast => {
+							const { person, character } = cast;
+							return (
+								<div key={person.id} className='mb-10 bg-slate-800 p-5 rounded'>
+									<div className='flex sm:flex-row flex-col gap-4 mb-5'>
+										<img src={character.image?.medium} alt='' />
+										<h2>
+											<a
+												href={person.url}
+												target='_blank'
+												rel='noreferrer'
+												className='text-2xl font-bold italic btn-link'>
+												{person.name}
+											</a>
+											<span className='text-2xl font-bold italic ml-2'>
+												as {character.name}
+											</span>
+										</h2>
+									</div>
 								</div>
-							</div>
-						);
-					})}
+							);
+						})
+					)}
 				</>
 			)}
 		</div>

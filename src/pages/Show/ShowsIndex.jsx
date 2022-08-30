@@ -1,11 +1,12 @@
-import { Outlet, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useEffect, useContext } from 'react';
 import Container from '../../components/shared/Container';
-import Spinner from '../../components/Spinner';
 import { ShowsContext } from '../../context/ShowsContext';
 
 const ShowsIndex = () => {
 	const { showsIndex, getIndexShows, loading } = useContext(ShowsContext);
+
+	if (loading) console.log('loading');
 
 	useEffect(() => {
 		getIndexShows();

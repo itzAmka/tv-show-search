@@ -9,23 +9,25 @@ const Shows = () => {
 	const { shows, loading } = useContext(ShowsContext);
 
 	return (
-		<>
-			<div className='grid place-items-center max-w-7xl  mx-auto mt-20'>
-				<section className='grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 sm:mt-16 mt-10 '>
+		<Container>
+			<div className='grid place-items-center max-w-7xl mx-auto'>
+				<>
 					{loading ? (
-						<></>
+						<div>
+							<Spinner />
+						</div>
 					) : (
-						<>
+						<section className='grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 sm:mt-5 mt-20 '>
 							{shows.map(showObj => {
 								const { show } = showObj;
 								return <Show key={show.id} show={show} />;
 							})}
-						</>
+						</section>
 					)}
-				</section>
+				</>
 			</div>
 			<Outlet />
-		</>
+		</Container>
 	);
 };
 
