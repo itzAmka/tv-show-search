@@ -32,11 +32,6 @@ const ShowsMain = () => {
 								Crew
 							</Link>
 						</li>
-						<li>
-							<Link to='characters' className='btn btn-link'>
-								Characters
-							</Link>
-						</li>
 					</ul>
 				</nav>
 			</section>
