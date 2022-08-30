@@ -1,8 +1,8 @@
 import { useEffect, useContext } from 'react';
 import { useParams, Outlet } from 'react-router-dom';
-import { ShowsContext } from '../../context/ShowsContext';
-import NoImage from '../../assets/no-image.svg';
-import Spinner from '../../components/Spinner';
+import { ShowsContext } from '../context/ShowsContext';
+import NoImage from '../assets/no-image.svg';
+import Spinner from '../components/Spinner';
 
 const ShowDetails = () => {
 	const { searchSingleShow, show, loading } = useContext(ShowsContext);

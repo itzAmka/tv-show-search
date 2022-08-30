@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ShowsProvider } from './context/ShowsContext';
 import Navbar from './components/layout/Navbar';
-import ShowsIndex from './pages/show/ShowsIndex';
-import ShowsNav from './pages/show/ShowsNav';
-import ShowDetails from './pages/show/ShowDetails';
-import Episodes from './pages/show/Episodes';
-import Seasons from './pages/show/Seasons';
-import Cast from './pages/show/Cast';
-import Crew from './pages/show/Crew';
+import IndexShows from './pages/IndexShows';
+import ShowsNav from './pages/ShowsNav';
+import ShowDetails from './pages/ShowDetails';
+import Episodes from './pages/Episodes';
+import Seasons from './pages/Seasons';
+import Cast from './pages/Cast';
+import Crew from './pages/Crew';
 import Shows from './components/tv-shows/Shows';
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
 			<Router>
 				<Navbar />
 				<Routes>
-					<Route path='/' element={<ShowsIndex />} />
+					<Route path='/' element={<IndexShows />} />
 					<Route path='/shows' element={<Shows />}></Route>
 					<Route path='/shows/:id/:showName' element={<ShowsNav />}>
 						<Route path='' element={<ShowDetails />} />

@@ -1,14 +1,14 @@
 import { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { ShowsContext } from '../../context/ShowsContext';
-import Spinner from '../../components/Spinner';
+import { ShowsContext } from '../context/ShowsContext';
+import Spinner from '../components/Spinner';
 
-const Crew = () => {
-	const { crews, getCrewsById, loading } = useContext(ShowsContext);
+const Cast = () => {
+	const { casts, getCastsById, loading } = useContext(ShowsContext);
 	const params = useParams();
 
 	useEffect(() => {
-		getCrewsById(params.id);
+		getCastsById(params.id);
 	}, []);
 
 	return (
@@ -19,17 +19,15 @@ const Crew = () => {
 				</>
 			) : (
 				<>
-					{crews.length === 0 ? (
+					{casts.length === 0 ? (
 						<div className='mb-10 bg-slate-800 p-5 rounded'>N/A</div>
 					) : (
-						crews.map((crew, i) => {
-							const { person, type } = crew;
+						casts.map(cast => {
+							const { person, character } = cast;
 							return (
-								<div
-									key={`${person.id}${i}`}
-									className='mb-10 bg-slate-800 p-5 rounded'>
+								<div key={person.id} className='mb-10 bg-slate-800 p-5 rounded'>
 									<div className='flex sm:flex-row flex-col gap-4 mb-5'>
-										<img src={person.image?.medium} alt='' />
+										<img src={character.image?.medium} alt='' />
 										<h2>
 											<a
 												href={person.url}
@@ -38,7 +36,9 @@ const Crew = () => {
 												className='text-2xl font-bold italic btn-link'>
 												{person.name}
 											</a>
-											<p className='text-2xl font-bold italic mt-4'>{type}</p>
+											<span className='text-2xl font-bold italic ml-2'>
+												as {character.name}
+											</span>
 										</h2>
 									</div>
 								</div>
@@ -51,4 +51,4 @@ const Crew = () => {
 	);
 };
 
-export default Crew;
+export default Cast;

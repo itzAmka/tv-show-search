@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { ShowsContext } from '../../context/ShowsContext';
-import Spinner from '../../components/Spinner';
+import { ShowsContext } from '../context/ShowsContext';
+import Spinner from '../components/Spinner';
 
 const Episodes = () => {
 	const { episodes, getEpisodesById, loading } = useContext(ShowsContext);

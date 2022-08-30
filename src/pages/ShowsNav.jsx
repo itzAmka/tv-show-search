@@ -1,5 +1,5 @@
 import { Outlet, Link } from 'react-router-dom';
-import Container from '../../components/shared/Container';
+import Container from '../components/shared/Container';
 
 const ShowsNav = () => {
 	return (

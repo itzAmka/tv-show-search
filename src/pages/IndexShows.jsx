@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useContext } from 'react';
-import Container from '../../components/shared/Container';
-import { ShowsContext } from '../../context/ShowsContext';
+import Container from '../components/shared/Container';
+import NoImage from '../assets/no-image.svg';
+import { ShowsContext } from '../context/ShowsContext';
 
-const ShowsIndex = () => {
-	const { showsIndex, getIndexShows, loading } = useContext(ShowsContext);
-
-	if (loading) console.log('loading');
+const IndexShows = () => {
+	const { showsIndex, getIndexShows } = useContext(ShowsContext);
 
 	useEffect(() => {
 		getIndexShows();
@@ -64,4 +63,4 @@ const ShowsIndex = () => {
 	);
 };
 
-export default ShowsIndex;
+export default IndexShows;
