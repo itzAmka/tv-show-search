@@ -35,6 +35,7 @@ export const ShowsProvider = ({ children }) => {
 		try {
 			setLoading(true);
 			const res = await searchShow(showName);
+
 			setTimeout(() => {
 				setShow(res);
 				setLoading(false);
@@ -48,7 +49,7 @@ export const ShowsProvider = ({ children }) => {
 		try {
 			setLoading(true);
 			const res = await getEpisodes(id);
-			console.log(res);
+
 			setTimeout(() => {
 				setEpisodes(res);
 				setLoading(false);
@@ -62,7 +63,7 @@ export const ShowsProvider = ({ children }) => {
 		try {
 			setLoading(true);
 			const res = await getSeasons(id);
-			console.log(res);
+
 			setTimeout(() => {
 				setSeasons(res);
 				setLoading(false);
@@ -76,7 +77,7 @@ export const ShowsProvider = ({ children }) => {
 		try {
 			setLoading(true);
 			const res = await getCasts(id);
-			console.log(res);
+
 			setTimeout(() => {
 				setCasts(res);
 				setLoading(false);
@@ -90,7 +91,7 @@ export const ShowsProvider = ({ children }) => {
 		try {
 			setLoading(true);
 			const res = await getCrews(id);
-			console.log(res);
+
 			setTimeout(() => {
 				setCrews(res);
 				setLoading(false);
