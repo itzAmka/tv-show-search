@@ -1,5 +1,5 @@
 import { useEffect, useContext } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Outlet } from 'react-router-dom';
 import { ShowsContext } from '../../context/ShowsContext';
 import NoImage from '../../assets/no-image.svg';
 import Spinner from '../../components/Spinner';
@@ -108,6 +108,7 @@ const ShowDetails = () => {
 					</section>
 				</>
 			)}
+			<Outlet />
 		</div>
 	);
 };

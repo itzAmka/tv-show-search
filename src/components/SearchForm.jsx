@@ -1,9 +1,11 @@
 import { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ShowsContext } from '../context/ShowsContext';
 
 const SearchForm = () => {
 	const { searchTvShows } = useContext(ShowsContext);
 	const [showName, setShowName] = useState('');
+	const navigate = useNavigate();
 
 	const handleChange = e => {
 		setShowName(e.target.value);
@@ -12,6 +14,7 @@ const SearchForm = () => {
 	const handleSubmit = e => {
 		e.preventDefault();
 		searchTvShows(showName);
+		navigate('/shows');
 		setShowName('');
 	};
 

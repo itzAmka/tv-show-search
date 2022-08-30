@@ -1,21 +1,35 @@
-import { useState, createContext } from 'react';
+import { useState, createContext, useEffect } from 'react';
 import { searchShows } from '../api/searchShows';
 import { searchShow } from '../api/searchShow';
 import { getEpisodes } from '../api/getEpisodes';
 import { getSeasons } from '../api/getSeasons';
 import { getCasts } from '../api/getCasts';
 import { getCrews } from '../api/getCrews';
+import { getShows } from '../api/getShows';
 
 export const ShowsContext = createContext();
 
 export const ShowsProvider = ({ children }) => {
 	const [show, setShow] = useState({});
 	const [shows, setShows] = useState([]);
+	const [showsIndex, setShowsIndex] = useState([]);
 	const [episodes, setEpisodes] = useState([]);
 	const [seasons, setSeasons] = useState([]);
 	const [casts, setCasts] = useState([]);
 	const [crews, setCrews] = useState([]);
 	const [loading, setLoading] = useState(false);
+
+	const getIndexShows = async () => {
+		try {
+			const res = await getShows();
+			setTimeout(() => {
+				setShowsIndex(res);
+				setLoading(false);
+			}, 500);
+		} catch (error) {
+			console.log('Errr:', error);
+		}
+	};
 
 	const searchTvShows = async showNames => {
 		try {
@@ -104,6 +118,7 @@ export const ShowsProvider = ({ children }) => {
 	return (
 		<ShowsContext.Provider
 			value={{
+				getIndexShows,
 				searchTvShows,
 				searchSingleShow,
 				getEpisodesById,
@@ -112,6 +127,7 @@ export const ShowsProvider = ({ children }) => {
 				getCrewsById,
 				shows,
 				show,
+				showsIndex,
 				episodes,
 				seasons,
 				casts,

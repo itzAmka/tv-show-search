@@ -6,7 +6,7 @@ const Show = ({ show }) => {
 
 	return (
 		<Link
-			to={`/show/${id}/${name.replaceAll(' ', '_')}`}
+			to={`/shows/${id}/${name.replaceAll(' ', '_')}`}
 			className='card bg-slate-800 shadow-xl max-w-xs sm:mx-0'>
 			<figure className='h-full'>
 				<img

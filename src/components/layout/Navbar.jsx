@@ -1,4 +1,5 @@
 import { Link, NavLink } from 'react-router-dom';
+import SearchForm from '../SearchForm';
 
 const Navbar = () => {
 	return (
@@ -6,14 +7,17 @@ const Navbar = () => {
 			<h1 className='text-2xl'>
 				<Link to='/'>QUERY SHOWS</Link>
 			</h1>
-			<ul className='flex gap-5'>
-				<li>
-					<NavLink to='/'>Tv Shows</NavLink>
-				</li>
-				<li>
-					<NavLink to='/people'>People</NavLink>
-				</li>
-			</ul>
+			<div className='flex justify-between items-center gap-10 h-full'>
+				<SearchForm />
+				<ul className='flex gap-5'>
+					<li>
+						<NavLink to='/'>Tv Shows</NavLink>
+					</li>
+					<li>
+						<NavLink to='/people'>People</NavLink>
+					</li>
+				</ul>
+			</div>
 		</nav>
 	);
 };

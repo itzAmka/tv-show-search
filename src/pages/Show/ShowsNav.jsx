@@ -1,7 +1,9 @@
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link, useParams } from 'react-router-dom';
 import Container from '../../components/shared/Container';
 
-const ShowsMain = () => {
+const ShowsNav = () => {
+	const params = useParams();
+	console.log(params);
 	return (
 		<Container>
 			<section className='max-w-7xl mx-auto mt-50 '>
@@ -40,4 +42,4 @@ const ShowsMain = () => {
 	);
 };
 
-export default ShowsMain;
+export default ShowsNav;
