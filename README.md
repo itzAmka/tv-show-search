@@ -1,4 +1,4 @@
-# Query Shows 
+# [Query Shows](https://www.queryshows.com/) 
 **Query Shows** is a site where you can search tv shows.<br>
 <br>
 
