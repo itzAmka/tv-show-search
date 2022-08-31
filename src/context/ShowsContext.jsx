@@ -1,4 +1,5 @@
 import { useState, createContext } from 'react';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 import { searchShows } from '../api/searchShows';
 import { searchShow } from '../api/searchShow';
 import { getEpisodes } from '../api/getEpisodes';
@@ -11,12 +12,12 @@ export const ShowsContext = createContext();
 
 export const ShowsProvider = ({ children }) => {
 	const [show, setShow] = useState({});
-	const [shows, setShows] = useState([]);
-	const [showsIndex, setShowsIndex] = useState([]);
-	const [episodes, setEpisodes] = useState([]);
-	const [seasons, setSeasons] = useState([]);
-	const [casts, setCasts] = useState([]);
-	const [crews, setCrews] = useState([]);
+	const [shows, setShows] = useLocalStorage('shows', []);
+	const [showsIndex, setShowsIndex] = useLocalStorage('showsIndex', []);
+	const [episodes, setEpisodes] = useLocalStorage('episodes', []);
+	const [seasons, setSeasons] = useLocalStorage('seasons', []);
+	const [casts, setCasts] = useLocalStorage('casts', []);
+	const [crews, setCrews] = useLocalStorage('crews', []);
 	const [loading, setLoading] = useState(false);
 
 	const getIndexShows = async () => {

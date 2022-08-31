@@ -20,7 +20,7 @@ const IndexShows = () => {
 						<Spinner />
 					</>
 				) : (
-					<section className='grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 sm:mt-16 mt-10 '>
+					<section className='grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 sm:mt-5 mt-20 '>
 						{showsIndex.map(show => {
 							const { id, name, image, rating, genres } = show;
 							return (
