@@ -21,7 +21,9 @@ export const ShowsProvider = ({ children }) => {
 
 	const getIndexShows = async () => {
 		try {
+			setLoading(true);
 			const res = await getShows();
+
 			setTimeout(() => {
 				setShowsIndex(res);
 				setLoading(false);

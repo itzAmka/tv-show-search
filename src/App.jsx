@@ -9,6 +9,7 @@ import Seasons from './pages/Seasons';
 import Cast from './pages/Cast';
 import Crew from './pages/Crew';
 import Shows from './components/tv-shows/Shows';
+import NotFound from './pages/NotFound';
 
 const App = () => {
 	return (
@@ -25,6 +26,7 @@ const App = () => {
 						<Route path='cast' element={<Cast />} />
 						<Route path='crew' element={<Crew />} />
 					</Route>
+					<Route path='/*' element={<NotFound />} />
 				</Routes>
 			</Router>
 		</ShowsProvider>
