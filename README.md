@@ -17,7 +17,7 @@ Query Shows is the updated version of [tv-shows-search](https://tv-shows-search.
 ## Overview
 
 ### Why Query Shows
-The reason I built Query Shows site is to participate [W3School Summer Event](https://discord.gg/ezwp9wh8?event=992334751157456946) on [W3School Discord Server](https://discord.gg/dGagDWQD)
+The reason I built Query Shows site is to participate [W3Schools Summer Event](https://discord.gg/ezwp9wh8?event=992334751157456946) on [W3Schools Discord Server](https://discord.gg/dGagDWQD)
 
 ### The Event
 The Summer season brings a new event at your doorstep! Spend your vacation wisely and expand your knowlegde with our fun programming event with a chance to win exciting prizes!<br>
