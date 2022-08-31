@@ -3,7 +3,7 @@
 <br>
 
 Query Shows uses [Tv-Maze-Api](https://www.tvmaze.com/api) to make it possible to search tv shows. <br><br>
-Query Shows is the updated version of [tv-shows-search](https://tv-shows-search.netlify.app/) which I created while I was learning about AJAX.<br><br>
+Query Shows is the updated version of [tv-shows-search](https://v1-tv-shows-search.netlify.app/) which I created while I was learning about AJAX.<br><br>
 
 ## Table of contents
 - [Overview](#overview)
@@ -33,7 +33,7 @@ Good luck!<br>
 ## Links
 
 - New Version of Query Shows URL: [Preview](https://tv-shows-search.netlify.app/)
-- Original Version of Query Shows URL: [Preview]()
+- Original Version of Query Shows URL: [Preview](https://v1-tv-shows-search.netlify.app/)
 
 ## My process
 
