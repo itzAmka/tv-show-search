@@ -5,17 +5,30 @@ import { ShowsContext } from '../context/ShowsContext';
 const SearchForm = () => {
 	const { searchTvShows } = useContext(ShowsContext);
 	const [showName, setShowName] = useState('');
+	const [inputEmpty, setInputEmpty] = useState(false);
 	const navigate = useNavigate();
+
+	const handleInputState = () => {
+		if (showName.length === 0 || showName.length === '') {
+			setInputEmpty(true);
+		} else {
+			setInputEmpty(false);
+		}
+	};
 
 	const handleChange = e => {
 		setShowName(e.target.value);
+		handleInputState();
 	};
 
 	const handleSubmit = e => {
 		e.preventDefault();
-		searchTvShows(showName);
-		navigate('/shows');
-		setShowName('');
+		if (showName.length > 0) {
+			searchTvShows(showName);
+			navigate('/shows');
+			setShowName('');
+		}
+		handleInputState();
 	};
 
 	return (
@@ -23,7 +36,9 @@ const SearchForm = () => {
 			<div className='form-control relative w-full'>
 				<input
 					type='search'
-					className='input input-bordered input-primary w-full'
+					className={`input input-bordered w-full ${
+						inputEmpty ? 'input-error' : 'input-primary'
+					}`}
 					placeholder='Search for shows'
 					value={showName}
 					onChange={handleChange}

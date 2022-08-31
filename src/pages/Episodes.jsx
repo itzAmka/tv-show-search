@@ -17,6 +17,8 @@ const Episodes = () => {
 				<>
 					<Spinner />
 				</>
+			) : episodes.length === 0 ? (
+				<div className='mb-10 bg-slate-800 p-5 rounded'>N/A</div>
 			) : (
 				<table className='table w-full border-collapse border border-slate-500'>
 					<thead>
