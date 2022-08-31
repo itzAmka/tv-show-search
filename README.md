@@ -24,7 +24,7 @@ The Summer season brings a new event at your doorstep! Spend your vacation wisel
 
 We hope that you enjoy participating in our event and gain lots of new programming experience. Although only the top 3 winners are getting prizes, every participants entry will be carefully evaluated.<br>
 
-Build an open-source project. Choose your favorite language, tool or a framework!<br>
+**Build an open-source project. Choose your favorite language, tool or a framework!**<br>
 
 Read more about it in our [#event-announcements](https://discord.gg/7pqWCfhS) channel!<br>
 
