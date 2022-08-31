@@ -32,7 +32,7 @@ Good luck!<br>
 
 ## Links
 
-- New Version of Query Shows URL: [Preview](https://tv-shows-search.netlify.app/)
+- New Version of Query Shows URL: [Preview](https://www.queryshows.com/)
 - Original Version of Query Shows URL: [Preview](https://v1-tv-shows-search.netlify.app/)
 
 ## My process
