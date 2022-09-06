@@ -42,7 +42,7 @@ Good luck!<br>
 - ReactJS
 - React Router Dom
 - Tailwindcss
-- Daiyui
+- Daisyui
 
 
 ## Author
